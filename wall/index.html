@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gif wall</title>
+<style type="text/css">
+body
+{
+	margin: 0px;
+	background: black;
+	overflow: hidden;
+}
+
+img
+{
+	position: absolute;
+	height: auto;
+	width: auto;
+	border: none;
+}
+
+div.buttons
+{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+}
+
+div.buttons>div
+{
+	border: 1px solid #ffffff;
+	border-radius: 3px;
+	
+	background: #333333;
+	opacity: 0.3;
+	
+	font-size: 16px;
+	color: #ffffff;
+	
+	margin: 10px;
+	padding: 10px;
+}
+
+div.buttons>div:hover
+{
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+div.wall
+{
+	position: relative;
+	width: 100%;
+	display: inline-block;
+	overflow: hidden;
+	z-index: 200;
+}
+
+div.wall:after
+{
+	padding-top: 56.25%;
+	display: block;
+	content: '';
+}
+
+#ndt_science
+{
+	top: 15%;
+	left: 27%;
+	width: 19%;
+	
+	z-index: 200;
+}
+
+#batman_teabag
+{
+	top: 27%;
+	left: 0px;
+	width: 32%;
+	
+	z-index: 300;
+}
+
+#tennis_dance
+{
+	top: 43%;
+	right: 0px;
+	width: 35%;
+	
+	z-index: 100;
+}
+
+#wheelchair_drifting
+{
+	top: 0px;
+	left: 67%;
+	width: 20%;
+	
+	z-index: 200;
+}
+
+#leonidas_shoop_da_whoop
+{
+	bottom: 0%;
+	left: 15%;
+	height: 40%;
+	
+	z-index: 100;
+}
+
+#batman_dance
+{
+	top: 0px;
+	right: 25%;
+	height: 43%;
+	
+	z-index: 50;
+}
+
+#barely_legal_pawn
+{
+	top: 42%;
+	left: 32%;
+	width: 20%;
+	
+	z-index: 350;
+}
+
+#senpai_shark
+{
+	top: 0px;
+	left: 0px;
+	width: 27%;
+}
+
+#gnome_rainbow
+{
+	top: 42%;
+	left: 47%;
+	width: 20%;
+	
+	z-index: 100;
+}
+
+#skrillex_bee
+{
+	top: 0px;
+	left: 27%;
+	width: 19%;
+	
+	z-index: 200;
+}
+
+#trinidad_grill
+{
+	right: -5%;
+	bottom: -5%;
+	width: 48%;
+	
+	z-index: 200;
+}
+
+#mah_lazer
+{
+	bottom: 15%;
+	right: 30%;
+	width: 20%;
+	
+	z-index: 400;
+}
+
+#feline_disrespect
+{
+	top: 0px;
+	left: 67%;
+	width: 33%;
+	
+	z-index: 100;
+}
+
+#pumpgirl
+{
+	right: 32%;
+	top: 20%;
+	height: 25%;
+	
+	z-index: 200;
+}
+
+#horse_thumbs_up
+{
+	left: 11%;
+	top: 43%;
+	width: 12%;
+	
+	z-index: 350;
+}
+
+#puke_rainbow
+{
+	bottom: -10%;
+	left: -12%;
+	height: 49%;
+	
+	z-index: 250;
+}
+
+#spock_rainbow
+{
+	top: 27%;
+	left: 32%;
+	width: 14%;
+	
+	z-index: 300;
+}
+
+.professionalism
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+marquee
+{
+	position: absolute;
+	top: 0;
+	font-family: sans-serif;
+	font-size: 10vh;
+	color: white;
+	cursor: default;
+}
+
+.dropIt
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+}
+
+.dropIt video
+{
+	margin-top: -240px;
+	margin-left: -320px;
+}
+
+.overlay
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	
+	z-index: 900;
+}
+
+.overlay div
+{
+	position: absolute;
+	
+	color: #ffffff;
+	
+	font-family: Arial, sans-serif;
+	font-weight: 100;
+	
+	line-height: 110%;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.overlay .happen
+{
+	z-index: 700;
+	
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	
+	letter-spacing: -3px;
+	
+	font-size: 13vh;
+	
+	text-decoration: underline;
+	
+	-webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: steps(1);
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: steps(1);
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: steps(1);
+    animation-iteration-count: infinite;
+	
+	text-shadow: -4px -4px 0 #dc7777,
+				 -4px -3px 0 #dc7777,
+				 -4px -2px 0 #dc7777,
+				 -4px -1px 0 #dc7777,
+				 -4px  0px 0 #dc7777,
+				  4px -4px 0 #dc7777,
+				  4px -3px 0 #dc7777,
+				  4px -2px 0 #dc7777,
+				  4px -1px 0 #dc7777,
+				  4px  0px 0 #dc7777,
+				 -3px -4px 0 #dc7777,
+				 -2px -4px 0 #dc7777,
+				 -1px -4px 0 #dc7777,
+				  0px -4px 0 #dc7777,
+				  3px -4px 0 #dc7777,
+				  2px -4px 0 #dc7777,
+				  1px -4px 0 #dc7777,
+				 
+				 -4px  4px 0 #dc7777,
+				 -4px  3px 0 #dc7777,
+				 -4px  2px 0 #dc7777,
+				 -4px  1px 0 #dc7777,
+				 -4px  0px 0 #dc7777,
+				  4px  4px 0 #dc7777,
+				  4px  3px 0 #dc7777,
+				  4px  2px 0 #dc7777,
+				  4px  1px 0 #dc7777,
+				  4px  0px 0 #dc7777,
+				 -3px  4px 0 #dc7777,
+				 -2px  4px 0 #dc7777,
+				 -1px  4px 0 #dc7777,
+				  0px  4px 0 #dc7777,
+				  3px  4px 0 #dc7777,
+				  2px  4px 0 #dc7777,
+				  1px  4px 0 #dc7777;
+}
+
+.advert
+{
+	z-index: 600;
+	
+	top: 15%;
+	left: 1%;
+	
+	font-size: 11vh;
+}
+
+.isement
+{
+	z-index: 600;
+	
+	top: 1%;
+	right: 0;
+	
+	font-size: 11vh;
+	
+	margin-right: -40vh;
+}
+
+.decklist
+{
+	z-index: 500;
+	
+	top: 40%;
+	left: 1%;
+	
+	font-size: 4vh;
+}
+
+.doritos
+{
+	z-index: 500;
+	
+	top: 41%;
+	left: 23vh;
+	
+	font-size: 3vh;
+}
+
+.sponsor
+{
+	z-index: 400;
+	
+	transform: rotate( 90deg );
+	
+	top: 50%;
+	left: 14vh;
+	
+	line-height: 142% !important;
+	
+	font-size: 2vh;
+}
+
+.kanguin
+{
+	z-index: 600;
+	
+	bottom: 1vh;
+	left: 1vw;
+	
+	font-size: 11vh;
+}
+
+.brot
+{
+	z-index: 500;
+	
+	bottom: 1vh;
+	left: 28vh;
+	
+	font-size: 4vh;
+	
+	line-height: 160% !important;
+	
+	font-family: "Comic Sans MS", cursive, sans-serif !important;
+}
+
+.solid
+{
+	font-size: 6vh;
+	
+	font-family: Arial, sans-serif !important;
+}
+
+.donatorer
+{
+	z-index: 300;
+	
+	top: auto;
+	right: auto;
+	bottom: 1vh;
+	left: 60vh;
+	
+	width: 50vw;
+	
+	font-size: 3vh;
+}
+
+.dew
+{
+	z-index: 600;
+	
+	top: 25%;
+	right: 0;
+	
+	font-size: 5vh;
+	
+	margin-right: -2vh;
+}
+
+.cam
+{
+	z-index: 400;
+	
+	bottom: 0;
+	right: 0;
+	
+	height: 30vh;
+	width: 30vw;
+}
+
+.cam img
+{
+	width: 100%;
+	height: 100%;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+	var jspAir = new Audio( "/wall/airhorn.mp3" );
+	var jspAC = new Audio( "/wall/ac.mp3" );
+	var jspJam = new Audio( "/wall/space_jam.mp3" );
+	
+	if( typeof jspAC.loop == 'boolean' )
+	{
+		jspAC.loop = true;
+	}
+	else
+	{
+		jspAC.addEventListener( "ended", function() {
+			this.currentTime = 0;
+			this.play();
+		}, false );
+	}
+	
+	jspJam.volume = 0.2;
+	jspAC.volume = 0.8;
+
+	function airhorn()
+	{
+		new Audio( "/wall/airhorn.mp3" ).play();
+	}
+	
+	function toggleAudio( audio )
+	{
+		if( audio.paused )
+		{
+			audio.play();
+		}
+		else
+		{
+			audio.pause();
+		}
+	}
+	
+	function dickObject( min, max )
+	{
+		this.min = min;
+		this.max = max;
+		this.dom = null;
+		return this;
+	}
+	
+	var jspProfessionalism = [ new dickObject( 0, 5 ), new dickObject( 20, 30 ), new dickObject( 40, 50 ), new dickObject( 60, 70 ), new dickObject( 80, 90 ) ];
+	
+	var dickOptions = {
+		scrollamount: function(){ return Math.round( Math.random() * 10 ) + 20; },
+		direction: 'right',
+		behaviour: 'scroll'
+	};
+	
+	function spawnDick()
+	{
+		var index = Math.floor( Math.random() * jspProfessionalism.length );
+		var spawned = false;
+		var parent = document.getElementById( 'dicks' );
+		for( var i = 0; i < jspProfessionalism.length; ++i )
+		{
+			var obj = jspProfessionalism[index];
+			
+			if( obj.dom == null )
+			{
+				obj.dom = document.createElement( 'marquee' );
+				var text = document.createTextNode( '8=======D~~~~~ <3' );
+				obj.dom.appendChild( text );
+				var attributes = Object.keys( dickOptions );
+				for( var a = 0; a < attributes.length; ++a )
+				{
+					var key = attributes[a];
+					var value = dickOptions[key];
+					if( typeof( value ) == 'function' )
+					{
+						value = value();
+					}
+					obj.dom.setAttribute( key, value );
+				}
+				obj.dom.style.top = '' + ( Math.round( Math.random() * ( obj.max - obj.min ) ) + obj.min ) + '%';
+				dicks.appendChild( obj.dom );
+				obj.dom.start();
+				spawned = true;
+				break;
+			}
+			
+			if( ++index >= jspProfessionalism.length ) index = 0;
+		}
+		
+		if( spawned )
+		{
+			var timeout = Math.random() * 5000 + 1000;
+			setTimeout( spawnDick, timeout );
+		}
+	}
+	
+	function overlayFunc()
+	{
+		var overlay = document.getElementById( 'sellout' );
+		
+		if( overlay.style.display != 'block' )
+		{
+			overlay.style.display = 'block';
+			
+			var donatorer = document.getElementById( 'donatorer' );
+			donatorer.start();
+		}
+		else
+		{
+			overlay.style.display = 'none';
+		}
+	}
+	
+	var vid_initialized = false;
+		
+	function dropItFunc()
+	{
+		var vid = document.getElementById( 'dropIt' );
+		var video = document.getElementById( 'pewpew' );
+			
+		if( !vid_initialized )
+		{
+			video.volume = 0.5;
+			video.onended = function(){ dropItFunc(); };
+			vid_initialized = true;
+		}
+		
+		if( isNaN( parseInt( vid.style.zIndex ) ) || parseInt( vid.style.zIndex ) == 0 )
+		{
+			vid.style.zIndex = 700;
+			
+			video.play();
+		}
+		else
+		{
+			vid.style.zIndex = 0;
+			
+			video.pause();
+			video.load();
+		}
+	}
+	
+	function profFunc()
+	{
+		var dicks = document.getElementById( 'dicks' );
+		
+		if( isNaN( parseInt( dicks.style.zIndex ) ) || parseInt( dicks.style.zIndex ) == 0 )
+		{
+			dicks.style.zIndex = 300;
+		}
+		else
+		{
+			dicks.style.zIndex = 0;
+		}
+	}
+	
+	function slamFunc()
+	{
+		toggleAudio( jspJam );
+	}
+	
+	function cohostFunc()
+	{
+		toggleAudio( jspAC );
+	}
+	</script>
+	<div class="wall">
+		<img src="/wall/ndt_science.gif" id="ndt_science" alt="ndt_science" >
+		<img src="/wall/batman_teabag.gif" id="batman_teabag" alt="batman_teabag" >
+		<img src="/wall/tennis_dance.gif" id="tennis_dance" alt="tennis_dance" >
+		<img src="/wall/wheelchair_drifting.gif" id="wheelchair_drifting" alt="wheelchair_drifting" >
+		<img src="/wall/leonidas_shoop_da_whoop.gif" id="leonidas_shoop_da_whoop" alt="leonidas_shoop_da_whoop" >
+		<img src="/wall/batman_dance.gif" id="batman_dance" alt="batman_dance" >
+		<img src="/wall/barely_legal_pawn.gif" id="barely_legal_pawn" alt="barely_legal_pawn" >
+		<img src="/wall/senpai_shark.gif" id="senpai_shark" alt="senpai_shark" >
+		<img src="/wall/gnome_rainbow.gif" id="gnome_rainbow" alt="gnome_rainbow" >
+		<img src="/wall/skrillex_bee.gif" id="skrillex_bee" alt="skrillex_bee" >
+		<img src="/wall/trinidad_grill.gif" id="trinidad_grill" alt="trinidad_grill" >
+		<img src="/wall/mah_lazer.gif" id="mah_lazer" alt="mah_lazer" >
+		<img src="/wall/feline_disrespect.gif" id="feline_disrespect" alt="feline_disrespect" >
+		<img src="/wall/pumpgirl.gif" id="pumpgirl" alt="pumpgirl" >
+		<img src="/wall/horse_thumbs_up.gif" id="horse_thumbs_up" alt="horse_thumbs_up" >
+		<img src="/wall/puke_rainbow.gif" id="puke_rainbow" alt="puke_rainbow" >
+		<img src="/wall/spock_rainbow.gif" id="spock_rainbow" alt="spock_rainbow" >
+	</div>
+	<div class="buttons">
+		<div class="air" onclick="airhorn()">jspAirhorn</div>
+		<div class="over" onclick="overlayFunc()">jspOverlay</div>
+		<div class="drop" onclick="dropItFunc()">jspDropIt</div>
+		<div class="prof" onclick="profFunc()">jspProfessionalism</div>
+		<div class="slam" onclick="slamFunc()">jspJam</div>
+		<div class="cohost" onclick="cohostFunc()">jspAC</div>
+	</div>
+	<div class="professionalism" id="dicks">
+	</div>
+	<div class="overlay" id="sellout" style="display: none;">
+		<div class="happen">SUBSCKRIPTON IS HAPPEN</div>
+		<div class="advert">ADVERT<br/>ISEMENT</div>
+		<div class="isement">ADVERT<br/>ISEMENT</div>
+		<div class="decklist">DECKLIST<br/>DIF<br/>ERENT</br/>CARDS<br/>CARDS<br/>CARDS<br/>CARDS</div>
+		<div class="doritos">doritoslol</div>
+		<div class="sponsor">BROUTH<br/>2 EWE<br/>bai NOTEPAD.eXE</div>
+		<div class="kanguin">KANGUIN<br/>G2Z<br/>LOL</div>
+		<div class="brot">BROT<br/>2 u<br/>bai<br/><span class="solid">TWITTER</span></div>
+		<marquee class="donatorer" id="donatorer" scrollamount="20">BIGGEST DONATORER: DAVE_420_NAZI_RACISM -- 1/2 ball of lint</marquee>
+		<div class="dew">mt dew<br/>xbox</div>
+		<div class="cam">
+			<img src="/jefPics/melady.png" />
+		</div>
+	</div>
+	<div class="dropIt" id="dropIt">
+		<video id="pewpew" src="/wall/drop_it.webm" width="640" height="480"></video>
+	</div>
+	<!--
+
+
+
+
+                                          `-.`'.-'
+                                       `-.        .-'.
+                                    `-.    -./\.-    .-'
+                                        -.  /_|\  .-
+                                    `-.   `/____\'   .-'.
+                                 `-.    -./.-""-.\.-      '
+                                    `-.  /< (()) >\  .-'
+                                  -   .`/__`-..-'__\'   .-
+                                ,...`-./___|____|___\.-'.,.
+                                   ,-'   ,` . . ',   `-,
+                                ,-'   ________________  `-,
+                                   ,'/____|_____|_____\
+                                  / /__|_____|_____|___\
+                                 / /|_____|_____|_____|_\
+                                ' /____|_____|_____|_____\
+                              .' /__|_____|_____|_____|___\
+                             ,' /|_____|_____|_____|_____|_\
+,,---''--...___...--'''--.. /../____|_____|_____|_____|_____\ ..--```--...___...--``---,,
+                           '../__|_____|_____|_____|_____|___\
+      \    )              '.:/|_____|_____|_____|_____|_____|_\               (    /
+      )\  / )           ,':./____|_____|_____|_____|_____|_____\             ( \  /(
+     / / ( (           /:../__|_____|_____|_____|_____|_____|___\             ) ) \ \
+    | |   \ \         /.../|_____|_____|_____|_____|_____|_____|_\           / /   | |
+ .-.\ \    \ \       '..:/____|_____|_____|_____|_____|_____|_____\         / /    / /.-.
+(=  )\ `._.' |       \:./ _  _ ___  ____ ____ _    _ _ _ _ _  _ ___\        | `._.' /(  =)
+ \ (_)       )       \./                                            \       (       (_) /
+  \    `----'         """"""""""""""""""""""""""""""""""""""""""""""""       `----'    /
+   \   ____\__                                                              __/____   /
+    \ (=\     \                     ILLUMINATI WAS HERE                    /     /-) /
+     \_)_\     \                                                          /     /_(_/
+          \     \                                                        /     /
+           )     )  _                                                _  (     (
+          (     (,-' `-..__                                    __..-' `-,)     )
+           \_.-''          ``-..____                  ____..-''          ``-._/
+            `-._                    ``--...____...--''                    _.-'
+                `-.._                                                _..-'
+                     `-..__                                    __..-'
+                           ``-..____                  ____..-''
+                                    ``--...____...--''
+
+
+                                     -->
+<script type="text/javascript">
+spawnDick();
+</script>
+</body>
+</html>

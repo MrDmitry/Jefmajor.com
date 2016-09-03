@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reading list</title>
+<style type="text/css">
+body
+{
+	margin: 0px;
+	background: black;
+	
+	color: white;
+	font-family: monospace;
+}
+
+img
+{
+	border: none;
+}
+
+.grid-sizer
+{
+	width: 24%;
+}
+
+.grid-item
+{
+	width: 24%;
+	background: transparent no-repeat center center;
+}
+
+.grid-item-holder
+{
+	padding: 100px 20px;
+	background: rgba( 0, 0, 0, 0.75 );
+}
+
+div.grid-item:hover .grid-item-holder
+{
+	background: rgba( 0, 0, 0, 0.5 );
+}
+
+.grid-item-title
+{
+	text-align: center;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 120%;
+	
+	padding-bottom: 10px;
+}
+
+.grid-item-author
+{
+	text-align: center;
+	font-size: 18px;
+	line-height: 140%;
+	
+	padding-bottom: 10px;
+}
+
+.grid-item-published
+{
+	text-align: center;
+	font-size: 12px;
+	line-height: 140%;
+}
+
+</style>
+<script type="text/javascript" src="masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+var books = [
+	{
+		"author": "Mary Doria Russell",
+		"title": "The Sparrow",
+		"published": "1996",
+		"image": "the_sparrow.jpg"
+	},
+	{
+		"author": "Richard K. Morgan",
+		"title": "Altered Carbon",
+		"published": "2002",
+		"image": "altered_carbon.jpg"
+	},
+	{
+		"author": "Peter Watts",
+		"title": "Starfish",
+		"published": "1999",
+		"image": "starfish.jpg"
+	},
+	{
+		"author": "Peter Watts",
+		"title": "Maelstrom",
+		"published": "2001",
+		"image": "maelstrom.jpg"
+	},
+	{
+		"author": "Peter Watts",
+		"title": "Behemoth",
+		"published": "2012",
+		"image": "behemoth.jpg"
+	},
+	{
+		"author": "Tibor Fischer",
+		"title": "I Like Being Killed",
+		"published": "2000",
+		"image": "being_killed.jpg"
+	},
+	{
+		"author": "Walter M. Miller, Jr.",
+		"title": "A Canticle for Leibowitz",
+		"published": "1960",
+		"image": "canticle.jpg"
+	},
+	{
+		"author": "Andy Weir",
+		"title": "The Martian",
+		"published": "2011",
+		"image": "martian.jpg"
+	},
+	{
+		"author": "Neal Stephenson",
+		"title": "Snow Crash",
+		"published": "1992",
+		"image": "snow_crash.jpg"
+	},
+	{
+		"author": "Neal Stephenson",
+		"title": "The Diamond Age",
+		"published": "1995",
+		"image": "diamond_age.jpg"
+	},
+	{
+		"author": "Neal Stephenson",
+		"title": "Cryptonomicon",
+		"published": "1999",
+		"image": "cryptonomicon.jpg"
+	},
+	{
+		"author": "Neal Stephenson",
+		"title": "Seveneves",
+		"published": "2015",
+		"image": "seveneves.jpg"
+	},
+	{
+		"author": "Peter Watts",
+		"title": "Blindsight",
+		"published": "2006",
+		"image": "blindsight.jpg"
+	},
+	{
+		"author": "Peter Watts",
+		"title": "Echopraxia",
+		"published": "2014",
+		"image": "echopraxia.jpg"
+	},
+	{
+		"author": "Robert A. Heinlein",
+		"title": "Starship Troopers",
+		"published": "1959",
+		"image": "starship_troopers.jpg"
+	},
+	{
+		"author": "Robert A. Heinlein",
+		"title": "Stranger in a Strange Land",
+		"published": "1961",
+		"image": "stranger.jpg"
+	},
+	{
+		"author": "Robert A. Heinlein",
+		"title": "Orphans of the Sky",
+		"published": "1963",
+		"image": "orphans.jpg"
+	},
+	{
+		"author": "Robert A. Heinlein",
+		"title": "The Moon Is a Harsh Mistress",
+		"published": "1966",
+		"image": "mistress.jpeg"
+	},
+	{
+		"author": "Isaac Asimov",
+		"title": "The Bicentennial Man",
+		"published": "1976",
+		"image": "bicentennial.jpg"
+	},
+	{
+		"author": "Robert A. Heinlein",
+		"title": "Job: A Comedy of Justice",
+		"published": "1984",
+		"image": "justice.jpg"
+	},
+	{
+		"author": "Margareth Atwood",
+		"title": "Oryx and Crake",
+		"published": "2003",
+		"image": "oryx_and_crake.jpg"
+	},
+	{
+		"author": "Margareth Atwood",
+		"title": "The Year of the Flood",
+		"published": "2009",
+		"image": "flood.jpg"
+	},
+	{
+		"author": "Margareth Atwood",
+		"title": "MaddAddam",
+		"published": "2013",
+		"image": "maddaddam.jpg"
+	},
+	{
+		"author": "Ben Bova",
+		"title": "Mars",
+		"published": "1992",
+		"image": "mars.jpg"
+	},
+	{
+		"author": "Kurt Vonnegut",
+		"title": "Cat's Cradle",
+		"published": "1963",
+		"image": "cradle.jpg"
+	},
+	{
+		"author": "Kurt Vonnegut",
+		"title": "Breakfast of Champions",
+		"published": "1973",
+		"image": "champions.jpg"
+	},
+	{
+		"author": "Charles Stross",
+		"title": "Accelerando",
+		"published": "2005",
+		"image": "accelerando.jpg"
+	},
+	{
+		"author": "T. E. Lawrence",
+		"title": "Seven pillars of wisdom",
+		"published": "1922",
+		"image": "seven_pillars.jpg"
+	}
+];
+
+var masonry = null;
+
+function generateBlock( obj )
+{
+	var item = document.createElement( 'div' );
+	item.className = 'grid-item';
+	
+	if( typeof( obj["image"] ) == "string" )
+	{
+		item.style.backgroundImage = 'url("' + obj["image"] + '")';
+	}
+	
+	var holder = document.createElement( 'div' );
+	holder.className = 'grid-item-holder';
+	
+	var title = document.createElement( 'div' );
+	title.className = 'grid-item-title'
+	title.appendChild( document.createTextNode( obj["title"] ) );
+	
+	var author = document.createElement( 'div' );
+	author.className = 'grid-item-author';
+	author.appendChild( document.createTextNode( obj["author"] ) );
+	
+	var published = document.createElement( 'div' );
+	published.className = 'grid-item-published';
+	published.appendChild( document.createTextNode( obj["published"] ) );
+	
+	holder.appendChild( title );
+	holder.appendChild( author );
+	holder.appendChild( published );
+	
+	item.appendChild( holder );
+	
+	return item;
+}
+
+function init()
+{
+	var parent = document.getElementById( 'grid' );
+	
+	if( parent )
+	{
+		for( var i = 0; i < books.length; ++i )
+		{
+			parent.appendChild( generateBlock( books[i] ) );
+		}
+		
+		masonry = new Masonry( '.grid', {
+			columnWidth: '.grid-sizer',
+			itemSelector: '.grid-item',
+		} );
+	}
+}
+</script>
+</head>
+<body onload="init();">
+	<div class="grid" id="grid">
+		<div class="grid-sizer"></div>
+	</div>
+	<!--
+
+
+
+
+                                          `-.`'.-'
+                                       `-.        .-'.
+                                    `-.    -./\.-    .-'
+                                        -.  /_|\  .-
+                                    `-.   `/____\'   .-'.
+                                 `-.    -./.-""-.\.-      '
+                                    `-.  /< (()) >\  .-'
+                                  -   .`/__`-..-'__\'   .-
+                                ,...`-./___|____|___\.-'.,.
+                                   ,-'   ,` . . ',   `-,
+                                ,-'   ________________  `-,
+                                   ,'/____|_____|_____\
+                                  / /__|_____|_____|___\
+                                 / /|_____|_____|_____|_\
+                                ' /____|_____|_____|_____\
+                              .' /__|_____|_____|_____|___\
+                             ,' /|_____|_____|_____|_____|_\
+,,---''--...___...--'''--.. /../____|_____|_____|_____|_____\ ..--```--...___...--``---,,
+                           '../__|_____|_____|_____|_____|___\
+      \    )              '.:/|_____|_____|_____|_____|_____|_\               (    /
+      )\  / )           ,':./____|_____|_____|_____|_____|_____\             ( \  /(
+     / / ( (           /:../__|_____|_____|_____|_____|_____|___\             ) ) \ \
+    | |   \ \         /.../|_____|_____|_____|_____|_____|_____|_\           / /   | |
+ .-.\ \    \ \       '..:/____|_____|_____|_____|_____|_____|_____\         / /    / /.-.
+(=  )\ `._.' |       \:./ _  _ ___  ____ ____ _    _ _ _ _ _  _ ___\        | `._.' /(  =)
+ \ (_)       )       \./                                            \       (       (_) /
+  \    `----'         """"""""""""""""""""""""""""""""""""""""""""""""       `----'    /
+   \   ____\__                                                              __/____   /
+    \ (=\     \                     ILLUMINATI WAS HERE                    /     /-) /
+     \_)_\     \                                                          /     /_(_/
+          \     \                                                        /     /
+           )     )  _                                                _  (     (
+          (     (,-' `-..__                                    __..-' `-,)     )
+           \_.-''          ``-..____                  ____..-''          ``-._/
+            `-._                    ``--...____...--''                    _.-'
+                `-.._                                                _..-'
+                     `-..__                                    __..-'
+                           ``-..____                  ____..-''
+                                    ``--...____...--''
+
+
+                                     -->
+</body>
+</html>

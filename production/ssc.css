@@ -1,0 +1,38 @@
+body
+{
+	margin: 0px;
+	background: black;
+	overflow: hidden;
+}
+
+img
+{
+	height: auto;
+	width: auto;
+	border: none;
+}
+
+.bg
+{
+	position: relative;
+
+	width: 100%;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.bg > img
+{
+	width: 100%;
+}
+
+#magic
+{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+}
