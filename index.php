@@ -74,7 +74,8 @@ onmouseout="this.src='jefPics/Donate1.png'">
 
 		
 	<div id="corner">
-           <a href="mailto:mikael@rubixy.com?subject=MEOW!">Contact</a>
+           <a href="mailto:mikael@rubixy.com?subject=MEOW!">Contact</a> 
+           <a href="https://github.com/mikaelssen/Jefmajor.com">GitHub</a>
     </div>
 	</div>
 
