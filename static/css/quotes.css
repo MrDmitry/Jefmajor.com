@@ -1,6 +1,7 @@
 
 div.quote{
-    width: 50%;
+    width: 100%;
+    max-width: 960px;
     height: auto;
     border-width: 1px;
     border-style: solid;
@@ -9,12 +10,17 @@ div.quote{
     background-color: #ffffff;
     
 }
+div.text {
+    padding: 4px;
+}
 div.date{
     text-align: center;
     font-weight: bold;
+    font-size: 12px;
     font-family: "Arial Black", Gadget, sans-serif;
-    color: #000000;
+    color: #555;
     background-color: #EEEEEE;
+    padding: 2px;
 }
 
 
