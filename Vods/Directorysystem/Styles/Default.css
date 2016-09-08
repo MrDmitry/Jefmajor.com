@@ -1,0 +1,176 @@
+/*-------------------*/
+/* HEADER STUFF      */
+/*-------------------*/
+
+/* Nothing here yet */
+
+/*-------------------*/
+/* BODY STUFF	     */
+/*-------------------*/
+
+/* CSS for the default HTML body. If no value is set in specific CSS code, this will be used.*/
+/* Consider it a type of "fallback" CSS code. More exists for default div further down the page.*/
+body{
+	background-color: #EFF3F3;
+	background-image: url('../../Directorysystem/Images/Styles/style-background-line-blue-horizontal-repeat.png'), url('../../Directorysystem/Images/Styles/rubixy_stripe-bg.png');
+	background-position: top left, center center;
+	background-repeat: repeat-x, repeat;
+	color: #black;
+	font-family: 'Segoe UI';
+	font-weight: 200;
+	src: local("Segoe UI Light");
+	font-size: 14px;
+}
+
+/*--------------------*/
+/* HYPERLINKS & FONTS */
+/*--------------------*/
+
+/* Set color and decoration on default hyperlinks */
+a {
+	color: black;
+	text-decoration: none;
+}
+
+/* Set color and decoration on hovered hyperlinks */
+a:hover {
+	color:#318FFF;
+	text-decoration:none;
+	cursor:pointer;
+}
+p {
+	font-family: 'Segoe UI';
+	font-size: 1.2em;
+}
+
+/*-------------------*/
+/*       DIVS        */
+/*-------------------*/
+
+/* Default CDD settings for default .div */
+div{
+	background-color: white;
+}
+
+/*Anything generated is whitin the div frame, so the frame contains ALL of the things.*/
+div.frame{
+	background-color: #FCFCFC;
+	margin: 50px auto;
+	width: 900px;
+	padding: 0px;
+	border: 1px solid #DEDEDE;
+	font-size: 14px;
+	display:block;
+	position: relative;
+}
+
+/* Page Header - e.g. the div that includes the text "File Browser" */
+div.header{
+	background-color: #FCFCFC;
+	margin-left: 20px;
+	padding: 0px;
+	width: 90%;
+	height: 30px;
+	font-size: 22px;
+	position: relative;
+}
+
+/*Page Footer*/
+div.footer{
+	background-color: #FCFCFC;
+	padding: 5px;
+	font-size: 14px;
+	color: #868B97;
+}
+
+/*Behind the files, like the thing that contains the files*/
+div.files{
+	background-color: #FCFCFC;
+	font-size: 0.9em;
+}
+
+/*File with the class list in even number*/
+div.list:nth-child(even){
+	background-color: #FCFCFC;
+	padding: 2px;
+	font-size: 14px;
+}
+
+/*File with the class list in odd number*/
+div.list:nth-child(odd){
+	background-color: #FCFCFC;
+	padding: 2px;
+	font-size: 14px;
+}
+div.files div:hover{
+	background: #DEDEDE;
+}
+div.subtitle-left1 {
+	background-color: #FCFCFC;
+	width: 30px;
+	height: 26px;
+	position: inherit;
+	top: -4px;
+	left: 5px;
+	text-align: center;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+div.subtitle-left2 {
+	background-color: #FCFCFC;
+	width: 30px;
+	height: 26px;
+	position: inherit;
+	top: -4px;
+	left: 5px;
+	text-align: center;
+	border: 1px solid #DEDEDE;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+div.subtitle-left1 div:hover{
+	background: #DEDEDE;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+div.about {
+	border: inset 1px solid red;
+	background-color: #FCFCFC;
+	padding: 0px;
+	margin: 0px;
+	width: 25px;
+	height: 25px;
+	position: inherit;
+	top: -55px;
+	left: 860px;
+	cursor: help;
+	text-align: center;
+}
+div.about div:hover{
+	background: #DEDEDE;
+}
+
+p.smaller {
+	font-size: 1.0em;
+	text-align: center;
+}
+div.hehe {
+	border: 1px solid #DEDEDE;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 125px;
+	height: 145px;
+	-moz-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	font-size: 0.9em;
+	text-align: center;
+}
+/*-------------------*/
+/* IMG		     */
+/*-------------------*/
+
+/*Image CSS for icons*/
+div.img{
+	border: 0px;
+}
