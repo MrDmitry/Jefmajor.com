@@ -65,6 +65,9 @@
           <a href="https://www.patreon.com/jefmajor" class="external-link" onmouseenter="princess.play( 'patreon' )">
             <img src="https://jefmajor.com/icon/1.png" alt="alsoicon1" class="sqaresofinfo">Patreon
           </a>
+          <a href="https://www.reddit.com/r/onefjef" class="external-link">
+            <img src="https://jefmajor.com/icon/7.png" alt="alsoicon1" class="sqaresofinfo">Unofficial Reddit
+          </a>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="donate">
