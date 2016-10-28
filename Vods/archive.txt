@@ -290,3 +290,6 @@ twitchvod v93760946
 twitchvod v94535816
 twitchvod v95553607
 twitchvod v95924606
+twitchvod v96573693
+twitchvod v96573497
+twitchvod v96533522
