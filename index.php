@@ -94,6 +94,9 @@
           <a href="https://jefmajor.com/production/" class="internal-link" onmouseenter="princess.play( 'under_production' )">
             <img src="jefPics/kappa.png" alt="alsoiconmeme" class="sqaresofinfo">Under productio
           </a>
+          <a href="duck/" class="internal-link" onmouseenter="princess.play( 'duck' )">
+            <img src="duck/duck.png" alt="alsoiconmeme" class="sqaresofinfo">Duck Norris
+          </a>
           <a href="https://jefmajor.com/Vods/" class="internal-link" onmouseenter="princess.play( 'backup_vods' )">
             <img src="https://jefmajor.com/icon/6.png" alt="alsoiconmeme" class="sqaresofinfo">Backup Vods
           </a>
@@ -152,6 +155,7 @@
     princess.set( "under_production", new Audio( "audio/under_production.mp3" ) );
     princess.set( "welcome", welcome );
     princess.set( "youtube", new Audio( "audio/youtube.mp3" ) );
+    princess.set( "duck", new Audio( "duck/quack.wav" ) );
   </script>
 </body>
 </html>
