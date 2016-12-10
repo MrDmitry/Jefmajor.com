@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="duck">
+	<head>
+		<title>Duck Norris</title>
+		<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+
+		body {
+			background-color: skyblue;
+			font-family: 'Rock Salt', cursive;
+			color: white;
+		}
+
+		p {
+			text-align: center;
+			opacity: 0.4;
+		}
+
+		.sun {
+			position: fixed;
+			top:2vh;
+			right:10vh;
+			width:20vh;
+			border-radius:10vh;
+		}
+
+		.world {
+			margin: 0px;
+			padding: 0px;
+			border: none;
+			width: 1000vw;
+			height: 100vh;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			background-image: url('world.png');
+			background-size: auto 100vh;
+			background-repeat: repeat-x;
+			background-position: 0px 0px;
+			animation-name: move;
+			animation-duration: 30s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: reverse;
+		}
+
+		@keyframes move {
+			from { left:-200vw; }
+			to { left:0px; }
+		}
+
+		img {
+			image-rendering: pixelated;
+			-ms-interpolation-mode: nearest-neighbour;
+			margin: 0px;
+			padding: 0px;
+			border: none;
+		}
+
+		img.mtx {
+			/* dankest of memes */
+			margin-left: auto; /* lol */
+			margin-right: auto; /* social criticism in source code form */
+			width: 30vw;
+		}
+
+		.e3 {
+			position: fixed;
+			bottom: 4vh;
+			left: 4vh;
+			height: 10vh;
+			z-index: 50;
+		}
+
+		.max {
+			position:fixed;
+			top:39vh;
+		}
+
+		@keyframes sink {
+			from { top:39vh }
+			to { top:105vh }
+		}
+
+		#max {
+			left:-40vw;
+			transition: top 3s ease-in, left 1s ease-out;
+		}
+
+		#jef {
+			right:-40vw;
+			transition: top 3s ease-in, right 1s ease-out;
+		}
+
+		div {
+			border: 0px;
+			padding: 0px;
+		}
+
+		.duck {
+			position: fixed;
+			top: 39vh;
+			left: 39vw;
+		}
+
+		.swimming {
+			transition: top 1s ease-out;
+			animation: bob 1s alternate infinite;
+		}
+
+		@keyframes bob {
+			/* Great job, you found bob! */
+			from {
+				top: 39vh;
+			}
+
+			to {
+				top: 40vh;
+			}
+		}
+
+		.model {
+			height: 40vh;
+		}
+
+		.weapon {
+			height: 40vh;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			animation: wiggle 2s alternate infinite;
+			transition: transform ease;
+		}
+
+		@keyframes wiggle {
+			from {
+				transform: rotate(5deg);
+			}
+
+			to {
+				transform: rotate(-5deg);
+			}
+		}
+
+		.pond {
+			background: -moz-linear-gradient(top,  rgba(135,224,253,0.5) 0%, rgba(44,101,127,0.65) 37%, rgba(2,74,96,0.9) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  rgba(135,224,253,0.5) 0%,rgba(44,101,127,0.65) 37%,rgba(2,74,96,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  rgba(135,224,253,0.5) 0%,rgba(44,101,127,0.65) 37%,rgba(2,74,96,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8087e0fd', endColorstr='#e6024a60',GradientType=0 ); /* IE6-9 */
+			position: fixed;
+			top: 66vh;
+			left: -10vw;
+			width: 120vw;
+			height: 44vh;
+			transition: transform 25ms linear;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="world" id="world">
+		<img class="e3" src="e3.png">
+		<img class="sun" src="sun.png" alt="it's the sun, you moron. the tooth is the sun...">
+		<div class="duck swimming">
+			<img class="model" id="duckmodel" src="duck.png">
+			<img class="weapon" id="duckgun" src="gun.png">
+		</div>
+		<img class="max model" id="max" src="max.png">
+		<img class="max model" id="jef" src="jef.png">
+		<div class="pond" id="water">
+			<p>(pond)</p>
+			<p><small>spacebar and arrow keys, you moron</small></p>
+			<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L34SSFMHQRHSQ">
+				<img class="mtx" src="mtx.jpg"><br>fucking microtransactions</a></p>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	var pond = new Audio('pond.wav');
+	var oizo = new Audio('oizo.wav');
+	var shot = new Audio('shot.wav');
+	var quack = new Audio('quack.wav');
+	var duckmodel = document.getElementById('duckmodel');
+	var duckgun = document.getElementById('duckgun');
+	var world = document.getElementById("world");
+	var water = document.getElementById("water");
+	var max = document.getElementById("max");
+	var jef = document.getElementById("jef");
+	var min = false;
+	var def = false;
+	var right = true;
+
+	pond.play();
+	setTimeout(function() {
+		oizo.play();
+		max.style.left = "20vw";
+	}, 5000);
+
+	(function loop() {
+		var rand = Math.round(Math.random() * (1000 - 500)) + 500;
+		setTimeout(function() {
+			if (!min) {
+				max.style.left = "20vw";
+			}
+			loop();  
+		}, rand);
+	}());
+
+	(function roop() {
+		var rand = Math.round(Math.random() * (1000 - 500)) + 500;
+		setTimeout(function() {
+			if (!def) {
+				jef.style.right = "20vw";
+			}
+			roop();  
+		}, rand);
+	}());
+
+	document.onkeydown = function(e) {
+		e = e || window.event;
+
+		// not quite right
+		if (e.keyCode == '37') {
+			if (right) {
+				quack.currentTime=0;
+				quack.play();
+				right = false;
+
+				duckmodel.src = "dack.png";
+				duckgun.src = "nug.png";
+				setTimeout(function() {
+					duckmodel.src = "kcud.png";
+					world.style.animationDirection = "normal";
+				}, 200);
+			}
+		}
+
+		// left out
+		if (e.keyCode == '39') {
+			if (!right) {
+				quack.currentTime=0;
+				quack.play();
+				right = true;
+
+				duckmodel.src = "kcad.png";
+				duckgun.src = "gun.png";
+				setTimeout(function() {
+					duckmodel.src = "duck.png";
+					world.style.animationDirection = "reverse";
+				}, 200);
+			}
+		}
+
+		// spess
+		if (e.keyCode == '32') {
+			shot.currentTime = 0;
+			shot.play();
+			if (right) {
+				duckgun.style.left = '-5vh';
+				water.style.transform = "rotate(5deg)";
+				def = true;
+				jef.src = "def.png";
+				jef.style.top = "105vh";
+				jef.style.right = "0px";
+				setTimeout(function() {
+					duckgun.style.left = '0px';
+					water.style.transform = "rotate(0deg)";
+				}, 50);
+				setTimeout(function() {
+					jef.src = "jef.png";
+					jef.style.right = "-40vw";
+					setTimeout(function() {
+						def = false;
+					},1000);
+					jef.style.top = "39vh";
+				}, 3100);
+			} else {
+				duckgun.style.left = '5vh';
+				water.style.transform = "rotate(-5deg)";
+				min = true;
+				max.src = "min.png";
+				max.style.top = "105vh";
+				max.style.left = "0px";
+				setTimeout(function() {
+					duckgun.style.left = '0px';
+					water.style.transform = "rotate(0deg)";
+				}, 50);
+				setTimeout(function() {
+					max.src = "max.png";
+					max.style.left = "-40vw";
+					max.style.top = "39vh";
+					setTimeout(function() {
+						min = false;
+					},1000);
+				}, 3100);
+			}
+		}
+
+	};
+	</script>
+</body>
+</html>
