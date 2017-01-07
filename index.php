@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="description" content="Webhub for JefMajor, a Twitch streamer, Youtuber, and certified meme expert.">
+  <meta keywords="Twitch,Youtube,Jef,Jefmajor,OneFjef,SS13,Dwarf Fortress,Memes,Airhorn,silent storm">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>One F Jef's passive Webhubpagething.</title>
@@ -68,6 +70,11 @@
           <a href="https://www.reddit.com/r/onefjef" class="external-link">
             <img src="https://jefmajor.com/icon/7.png" alt="alsoicon1" class="sqaresofinfo">Unofficial Reddit
           </a>
+          <a href="https://discord.gg/H97cHqF" class="external-link">
+            <img src="https://jefmajor.com/icon/8.png" alt="alsoicon1" class="sqaresofinfo">Discord
+          </a>
+
+          
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="donate">
