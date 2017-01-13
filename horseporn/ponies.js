@@ -1,1 +1,0 @@
-BrowserPonies.loadConfig({"baseurl":"http://arkentosh.com/horseporn/","speed":3,"speakProbability":0.1,"dontSpeak":true,"volume":0,"interval":40,"fps":25,"interactionInterval":500,"audioEnabled":false,"showFps":false,"preloadAll":false,"showLoadProgress":true,"fadeDuration":500,"autostart":true});

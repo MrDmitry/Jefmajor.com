@@ -3,7 +3,7 @@
 //Banned path words or signs
 $pathreplace = array(".","..","'","\"");
 
-//Weed removal :3
+//Weed removal
 $weed = array(".","..","Directorysystem","robots.txt",".htaccess","Backups");
 
 //video or music formats
@@ -23,8 +23,5 @@ $rootpath = getcwd();
 
 //Title of all the pages
 $Title = "Jef's good o'l fasioned floppy storage online on the tubes library";
-
-//Whatever to put on the bottom of the page
-$Bottomfooterthingy = "siteCode by Mikael -|| 2014 ||- lightStyle by Ariin";
 
 ?>

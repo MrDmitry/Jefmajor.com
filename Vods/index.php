@@ -4,11 +4,7 @@ header("Content-type: text/html; charset=iso-8859-1");
 require "Directorysystem/Config.php";
 require "Directorysystem/Core.php";
 
-global $rootpath; //init some globals
-
-if (!isset($_SESSION["Style"])){$_SESSION["Style"] = "Default";} //checks if set, else make default theme. Do we need theme? i wrote a almost functioning theme selector now anyways :p
-
-
+if (!isset($_SESSION["Style"])){$_SESSION["Style"] = "Default";}
 
 //Used to find path
 if (isset($_GET["dir"])) {

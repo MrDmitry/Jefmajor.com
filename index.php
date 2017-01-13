@@ -6,7 +6,7 @@
   <meta keywords="Twitch,Youtube,Jef,Jefmajor,OneFjef,SS13,Dwarf Fortress,Memes,Airhorn,silent storm">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>One F Jef's passive Webhubpagething.</title>
+  <title>Jefmajor.com</title>
   <link rel="stylesheet" href="static/css/bootstrap.min.css">
   <link rel="stylesheet" href="static/css/main.css">
   <script type="text/javascript" src="static/js/princess.js"></script>
