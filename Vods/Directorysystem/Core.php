@@ -39,7 +39,7 @@ function formatfiles($array){
 			if(!in_array($i,$weed)){//remove weeds, like .. and . (movement dirs)
 				if(!in_array(".".end(explode(".",$i)),$banned)){ // split file at .   Check if last . content is in array
 					$type = (is_dir($i)) ? "directory" : "file" ;//checks if dir or not.
-					echo  '<div class="list">'.geticon($i).'<a href="'.rawurlencode(islinkable($i)).'">'.$i; //prints the thing out
+					echo  '<div class="list">'.geticon($i).'<a href="'.islinkable($i).'">'.$i; //prints the thing out
 					echo "</a></div>";
 					$count++; // only add if the file is actually a dir or file.
 				}
@@ -112,9 +112,9 @@ function printarray($arr){
  */
 function islinkable($checkme){ 
 	if (isset($_GET["dir"]) && $_GET["dir"] != null && $_GET["dir"] != "" ) { //check if the get is set, and if it is, check if it's not retarded.
-		$returnmeh = (is_dir_smart($checkme)) ? '?dir='.$_GET["dir"]."/".rawurlencode($checkme) : $_GET["dir"]."/".$checkme;
+		$returnmeh = is_dir_smart($checkme) ? '?dir='.$_GET["dir"]."/".rawurlencode($checkme) : $_GET["dir"]."/".rawurlencode($checkme);
 	}else{
-		$returnmeh = (is_dir_smart($checkme)) ? '?dir='.rawurlencode($checkme) : $checkme;
+		$returnmeh = is_dir_smart($checkme) ? '?dir='.rawurlencode($checkme) : rawurlencode($checkme);
 	}
 	return $returnmeh;
 }
