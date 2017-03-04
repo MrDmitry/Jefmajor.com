@@ -1,30 +1,51 @@
 <!DOCTYPE html>
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require "./credentials.php";
+//setup the usual, the cred file is just the 4 variables under here, in that new PDO object.
+$con = new mysqli($SQL_server, $SQL_username, $SQL_password, $SQL_database);
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+ ?>
+
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ARE YOU A QUOTE YET?</title>
     <link rel="stylesheet" href="../static/css/quotes.css">
   </head>
   <body>
-    <?php 
-      $FileName = "FlatFileDatabase.memes";
-      $data = file($FileName);
-      foreach($data as $line) {
-    ?>
+   
     <div class="quote">
-      <?php           
-        $data = explode("|", htmlspecialchars($line));
-        echo '<div class="text">'.$data[0].'</div><div class="date">'.$data[1].'</div>';
-      ?>
+    <table style="width: 45px;">
+    <tbody>
+     		<?php 
+        //prepared statement, security man, it's hard :^)
+        $query = "SELECT `ID`,QUOTE,SUBMITTER,TIMESTAMP FROM `Quotes` WHERE `CHANNEL`LIKE 'jefmajor' ORDER BY `ID` DESC";
+
+        if ($stmt = $con->prepare($query)) {
+            $stmt->execute();
+            $stmt->bind_result($id, $quote, $sub, $stamp);
+            while ($stmt->fetch()) {
+            printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", $id, $quote, $sub, $stamp);
+            }
+            $stmt->close();
+        }
+        $con->close();
+        
+
+
+
+        ?>
+        </tbody>
+</table>
     </div>
-    <?php
-      }
-    ?>
-    <div id="corner">
-      <a href="mailto:mikael@rubixy.com?subject=jef quote" "Quote">Suggest a quote</a>
-    </div>
+   
   </body>
 </html>
-
 <!-- Idea by Fed993 -->
