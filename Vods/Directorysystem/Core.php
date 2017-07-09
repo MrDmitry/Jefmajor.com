@@ -39,19 +39,26 @@ function formatfiles($array){
 			if(!in_array($i,$weed)){//remove weeds, like .. and . (movement dirs)
 				if(!in_array(".".end(explode(".",$i)),$banned)){ // split file at .   Check if last . content is in array
 					$type = (is_dir($i)) ? "directory" : "file" ;//checks if dir or not.
-					echo  '<div class="list">'.geticon($i).'<a href="'.islinkable($i).'">'.$i; //prints the thing out
-					echo "</a></div>";
+					echo  '<div class="list">'.geticon($i).'<a href="'.islinkable($i).'">'.$i.'</a>'; //prints the thing out
+					if ($type == "file" && !is_dir_smart($i)) {
+						echo '<div class="right"><a href="'.islinkable(filename($i).".torrent").'">Torrent</a></div>';
+					}
+					echo "</div>";
 					$count++; // only add if the file is actually a dir or file.
 				}
 			}
 		}
-/*		echo "There's ".$count." files/folders in this directory.";*/
 		echo "<br><br>".$count." files/folders in this directory.";
 	}else{
 		echo'<div class="list" >Empty Folder. Put some files here :) </div>';
 	}
 }
 
+
+function filename($value)
+{ 
+	return pathinfo($value, PATHINFO_FILENAME );
+}
 
 /**
  * [getdircontent description]

@@ -10,7 +10,7 @@ $weed = array(".","..","Directorysystem","robots.txt",".htaccess","Backups");
 $playable = array(".mp4",".avi",".wav",".mov",".mp2",".ogg",".mkv");
 
 //Banned filetypes
-$banned = array(".php",".html",".htm",".js",".exe",".vbs",".dll",".cmd",".bat",".db",".config",".web",".css");
+$banned = array(".php",".jpg",".png",".html",".htm",".js",".exe",".vbs",".dll",".cmd",".bat",".db",".config",".web",".css",".torrent",".gitignore");
 
 //Filetypes with images, else i'd use the UNKNOWN.gif thingy :3
 $fileimages = array("rar","iso","gif","txt","docx","psd","ppt","mov","js","pdf","jpg","png","zip","xls","htm","html","mp4","mp3","mp2","flac","xml");

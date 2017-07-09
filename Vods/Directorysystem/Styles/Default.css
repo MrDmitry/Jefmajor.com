@@ -43,6 +43,14 @@ p {
 	font-size: 1.2em;
 }
 
+.right{
+	text-align: right;
+	float: right;
+	display:inline;
+}
+
+p {font-size:0; /* Fixes inline block spacing */ margin: 0; }
+span { width:50%; display:inline-block; }
 /*-------------------*/
 /*       DIVS        */
 /*-------------------*/
