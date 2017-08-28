@@ -8,8 +8,23 @@ div.quote{
     border-color: #000000;
     margin:0 auto 10px;
     background-color: #ffffff;
-    
 }
+
+table{
+    width:100%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+td{
+     vertical-align: bottom;
+}
+th, td {
+    
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
 div.text {
     padding: 4px;
 }
@@ -35,6 +50,7 @@ div.date{
     font-size: 200%;
     background-color: #ffffff;
 }
+
 
 
 

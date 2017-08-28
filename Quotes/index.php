@@ -22,8 +22,9 @@ if (mysqli_connect_errno()) {
   <body>
    
     <div class="quote">
-    <table style="width: 45px;">
+    <table>
     <tbody>
+    	<th>ID</th><th>Quote</th><th>Submitter Name</th><th>Timestamp</th>
      		<?php 
         //prepared statement, security man, it's hard :^)
         $query = "SELECT `ID`,QUOTE,SUBMITTER,TIMESTAMP FROM `Quotes` WHERE `CHANNEL`LIKE 'jefmajor' ORDER BY `ID` DESC";
@@ -32,7 +33,7 @@ if (mysqli_connect_errno()) {
             $stmt->execute();
             $stmt->bind_result($id, $quote, $sub, $stamp);
             while ($stmt->fetch()) {
-            printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", $id, $quote, $sub, $stamp);
+            printf('<tr><td style="border: 1px solid #ddd;">%s</td><td>%s</td><td>%s</td><td>%s</td></tr>', $id, $quote, $sub, $stamp);
             }
             $stmt->close();
         }
