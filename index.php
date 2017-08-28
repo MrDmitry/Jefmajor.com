@@ -55,23 +55,23 @@
           <a href="#social">Check your Social</a>
         </div>
         <div class="info-container">
-          <a href="https://www.youtube.com/user/jefmajor" class="external-link" onmouseenter="princess.play( 'youtube' )">
-            <img src="https://jefmajor.com/icon/4.png" alt="icon32" class="sqaresofinfo">Youtube
+          <a href="http://www.youtube.com/user/jefmajor" class="external-link" onmouseenter="princess.play( 'youtube' )">
+            <img src="http://jefmajor.com/icon/4.png" alt="icon32" class="sqaresofinfo">Youtube
           </a>
-          <a href="https://www.twitch.tv/jefmajor" class="external-link" onmouseenter="princess.play( 'twitch' )">
-            <img src="https://jefmajor.com/icon/2.png" alt="icon4" class="sqaresofinfo">Twitch
+          <a href="http://www.twitch.tv/jefmajor" class="external-link" onmouseenter="princess.play( 'twitch' )">
+            <img src="http://jefmajor.com/icon/2.png" alt="icon4" class="sqaresofinfo">Twitch
           </a>
-          <a href="https://twitter.com/jefmajor" class="external-link" onmouseenter="princess.play( 'twitter' )">
-            <img src="https://jefmajor.com/icon/3.png" alt="icon3" class="sqaresofinfo">Twitter
+          <a href="http://twitter.com/jefmajor" class="external-link" onmouseenter="princess.play( 'twitter' )">
+            <img src="http://jefmajor.com/icon/3.png" alt="icon3" class="sqaresofinfo">Twitter
           </a>
-          <a href="https://www.patreon.com/jefmajor" class="external-link" onmouseenter="princess.play( 'patreon' )">
-            <img src="https://jefmajor.com/icon/1.png" alt="alsoicon1" class="sqaresofinfo">Patreon
+          <a href="http://www.patreon.com/jefmajor" class="external-link" onmouseenter="princess.play( 'patreon' )">
+            <img src="http://jefmajor.com/icon/1.png" alt="alsoicon1" class="sqaresofinfo">Patreon
           </a>
-          <a href="https://www.reddit.com/r/onefjef" class="external-link">
-            <img src="https://jefmajor.com/icon/7.png" alt="alsoicon1" class="sqaresofinfo">Unofficial Reddit
+          <a href="http://www.reddit.com/r/onefjef" class="external-link">
+            <img src="http://jefmajor.com/icon/7.png" alt="alsoicon1" class="sqaresofinfo">Unofficial Reddit
           </a>
           <a href="https://discord.gg/H97cHqF" class="external-link">
-            <img src="https://jefmajor.com/icon/8.png" alt="alsoicon1" class="sqaresofinfo">Discord
+            <img src="http://jefmajor.com/icon/8.png" alt="alsoicon1" class="sqaresofinfo">Discord
           </a>
 
           
@@ -92,23 +92,23 @@
           <a href="#memes">Memes and stuff</a>
         </div>
         <div class="info-container">
-          <a href="https://jefmajor.com/wall/" class="internal-link" onmouseenter="princess.play( 'dank_wall' )">
-            <img src="https://jefmajor.com/icon/5.png" alt="alsoiconmeme" class="sqaresofinfo">Dank Wall
+          <a href="http://jefmajor.com/wall/" class="internal-link" onmouseenter="princess.play( 'dank_wall' )">
+            <img src="http://jefmajor.com/icon/5.png" alt="alsoiconmeme" class="sqaresofinfo">Dank Wall
           </a>
-          <a href="https://jefmajor.com/ReadingList/" class="internal-link" onmouseenter="princess.play( 'reading_list' )">
+          <a href="http://jefmajor.com/ReadingList/" class="internal-link" onmouseenter="princess.play( 'reading_list' )">
             <img src="jefPics/Face.png" alt="alsoiconmeme" class="sqaresofinfo">Reading List
           </a>
-          <a href="https://jefmajor.com/production/" class="internal-link" onmouseenter="princess.play( 'under_production' )">
+          <a href="http://jefmajor.com/production/" class="internal-link" onmouseenter="princess.play( 'under_production' )">
             <img src="jefPics/kappa.png" alt="alsoiconmeme" class="sqaresofinfo">Under productio
           </a>
           <a href="duck/" class="internal-link" onmouseenter="princess.play( 'duck' )">
             <img src="duck/duck.png" alt="alsoiconmeme" class="sqaresofinfo">Duck Norris
           </a>
-          <a href="https://jefmajor.com/Vods/" class="internal-link" onmouseenter="princess.play( 'backup_vods' )">
-            <img src="https://jefmajor.com/icon/6.png" alt="alsoiconmeme" class="sqaresofinfo">Backup Vods
+          <a href="http://jefmajor.com/Vodstorage/" class="internal-link" onmouseenter="princess.play( 'backup_vods' )">
+            <img src="http://jefmajor.com/icon/6.png" alt="alsoiconmeme" class="sqaresofinfo">Backup Vods
           </a>
-          <a href="https://jefmajor.com/Quotes/" class="internal-link">
-            <img src="https://jefmajor.com/icon/badge.png" alt="quoteiconmeme" class="sqaresofinfo">Quotes
+          <a href="http://jefmajor.com/Quotes/" class="internal-link">
+            <img src="http://jefmajor.com/icon/badge.png" alt="quoteiconmeme" class="sqaresofinfo">Quotes
           </a>
         </div>
       </div>
