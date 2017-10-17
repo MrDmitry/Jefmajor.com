@@ -116,7 +116,6 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="footer">
-            <a href="mailto:mikael@rubixy.com?subject=MEOW!">Contact</a> 
             <a href="https://github.com/mikaelssen/Jefmajor.com">GitHub</a>
           </div>
         </div>

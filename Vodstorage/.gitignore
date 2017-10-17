@@ -8,5 +8,7 @@
 **/*.zip
 **/*.bat
 **/*.exe
+**/*.torrent
 **/*.part
+**/*.ytdl
 Currently\ downloading/**
