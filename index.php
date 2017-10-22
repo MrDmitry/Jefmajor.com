@@ -105,7 +105,7 @@
             <img src="duck/duck.png" alt="alsoiconmeme" class="sqaresofinfo">Duck Norris
           </a>
           <a href="http://jefmajor.com/Vodstorage/" class="internal-link" onmouseenter="princess.play( 'backup_vods' )">
-            <img src="http://jefmajor.com/icon/6.png" alt="alsoiconmeme" class="sqaresofinfo">Backup Vods
+            <img src="http://jefmajor.com/icon/6.png" alt="alsoiconmeme" class="sqaresofinfo">Backup Vods (closed)
           </a>
           <a href="http://jefmajor.com/Quotes/" class="internal-link">
             <img src="http://jefmajor.com/icon/badge.png" alt="quoteiconmeme" class="sqaresofinfo">Quotes
